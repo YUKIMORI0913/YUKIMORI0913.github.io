@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://yukimori0913.github.io/sitemap.xml
