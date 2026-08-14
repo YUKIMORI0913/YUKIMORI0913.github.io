@@ -32,17 +32,18 @@ python3 -m venv .venv
 - https://manju.unagitani.com/robots.txt
 - https://manju.unagitani.com/sitemap.xml
 
-`sitemap.xml` にはトップページ、Photo Archive、および公開中のアーカイブ画像を登録します。管理画面で写真を保存するとサイトマップも自動生成されます。手動で再生成する場合は `python3 scripts/generate_sitemap.py` を実行します。両サイトの本番SEO監査は、コーポレートサイトのリポジトリで `python3 scripts/seo_check.py` を実行します。
+`sitemap.xml` にはトップページ、Photo Archive、および公開中のアーカイブ画像を登録します。管理画面で写真を保存するとサイトマップも自動生成されます。手動で再生成する場合は `python3 scripts/generate_sitemap.py` を実行します。両サイトの本番SEO監査は、コーポレートサイトのリポジトリで `python3 scripts/seo_check.py` を実行します。鰻谷饅頭サイト単独の詳細監査と公開出力内の旧Wix URL確認は、当リポジトリで `python3 scripts/check_manju_seo.py` を実行します。
 
 Search Consoleの所有権確認でHTML verification fileを選んだ場合は、Googleからダウンロードした `googleXXXXXXXXXXXXXXXX.html` を内容・ファイル名を変えずこのリポジトリのルートへ配置し、デプロイ後に `https://manju.unagitani.com/googleXXXXXXXXXXXXXXXX.html` が200で取得できることを確認します。HTMLタグ方式の場合は、Google指定の `google-site-verification` metaタグをトップページの `<head>` に追加します。検証用トークンを架空値で公開しないでください。
 
-コードのデプロイ完了後、森さんが次を実施してください。
+2026年8月14日に、次のSearch Console作業を実施済みです。
 
-1. Google Search Consoleへ `https://manju.unagitani.com/` のURLプレフィックスプロパティを追加する
-2. HTMLファイルまたはHTMLタグで所有権を確認する
-3. `https://manju.unagitani.com/sitemap.xml` を送信する
-4. URL検査で `https://manju.unagitani.com/` を検査する
-5. 「インデックス登録をリクエスト」を実行する
-6. `https://manju.unagitani.com/gallery.html` もURL検査し、必要に応じて登録をリクエストする
+1. Google Search Consoleへ `https://manju.unagitani.com/` のURLプレフィックスプロパティを追加
+2. HTMLタグで所有権を確認
+3. `https://manju.unagitani.com/sitemap.xml` を送信
+4. `https://manju.unagitani.com/` のインデックス登録をリクエスト
+5. `https://manju.unagitani.com/gallery.html` のインデックス登録をリクエスト
+
+旧Wix検索結果の削除方法、確認済み旧URL、SNSリンク統一などの運用手順は [GOOGLE_INDEXING_MANJU.md](GOOGLE_INDEXING_MANJU.md) を参照してください。
 
 サイトマップ送信や登録リクエストはインデックスを保証するものではありません。掲載可否と反映時期は検索エンジンが判断します。
