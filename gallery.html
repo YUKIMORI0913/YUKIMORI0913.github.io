@@ -13,24 +13,6 @@
   <header class="archive-header"><div class="wrap"><a class="logo" href="/">UNAGITANI MANJU</a><a class="archive-back" href="/#gallery">← BACK TO TOP</a></div></header>
   <main><section class="wrap archive-intro"><p class="eyebrow">PHOTO ARCHIVE</p><h1>THE<br>COLLECTION.</h1><p>演奏、制作、京都の風景。鰻谷饅頭の写真を、新しいものから収録しています。</p></section><section class="wrap"><p class="archive-count" aria-live="polite"></p><div class="archive-grid" aria-label="写真アーカイブ"></div><nav class="archive-pagination" aria-label="写真アーカイブのページ送り"></nav></section></main>
   <dialog class="archive-lightbox" aria-label="写真の拡大表示"><button class="archive-close" type="button" aria-label="閉じる">×</button><button class="archive-previous" type="button" aria-label="前の写真">‹</button><img src="" alt=""><button class="archive-next" type="button" aria-label="次の写真">›</button><p></p></dialog>
-  <script>
-    (async () => {
-      const response = await fetch('/');
-      const source = new DOMParser().parseFromString(await response.text(), 'text/html');
-      const photos = [...source.querySelectorAll('.photo-grid .photo-slot')].reverse();
-      const grid = document.querySelector('.archive-grid'); const pagination = document.querySelector('.archive-pagination'); const count = document.querySelector('.archive-count'); const perPage = 20;
-      const dialog = document.querySelector('.archive-lightbox');
-      const image = dialog.querySelector('img'); const caption = dialog.querySelector('p'); let active = 0;
-      const open = (index) => { active = index; const photo = photos[index]; const original = photo.querySelector('img'); image.src = original.src; image.alt = original.alt; caption.textContent = `${photo.querySelector('figcaption').textContent} — ${index + 1} / ${photos.length}`; if (!dialog.open) dialog.showModal(); };
-      const render = (page) => { const total = Math.ceil(photos.length / perPage); const start = page * perPage; grid.replaceChildren(); photos.slice(start, start + perPage).forEach((photo, localIndex) => { const index = start + localIndex; const figure = photo.cloneNode(true); figure.tabIndex = 0; figure.addEventListener('click', () => open(index)); figure.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(index); } }); grid.append(figure); }); count.textContent = `COLLECTION ${String(page + 1).padStart(2, '0')}  /  ${photos.length} IMAGES`; pagination.replaceChildren(); for (let i = 0; i < total; i += 1) { const button = document.createElement('button'); button.className = 'archive-page'; button.textContent = i + 1; if (i === page) button.setAttribute('aria-current', 'page'); button.addEventListener('click', () => { render(i); window.scrollTo({ top: 0, behavior: 'smooth' }); }); pagination.append(button); } if (page < total - 1) { const nextPage = document.createElement('button'); nextPage.className = 'archive-page archive-next-page'; nextPage.textContent = 'NEXT →'; nextPage.addEventListener('click', () => { render(page + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }); pagination.append(nextPage); } };
-      const step = (direction) => open((active + direction + photos.length) % photos.length);
-      dialog.querySelector('.archive-close').addEventListener('click', () => dialog.close());
-      dialog.querySelector('.archive-previous').addEventListener('click', () => step(-1));
-      dialog.querySelector('.archive-next').addEventListener('click', () => step(1));
-      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
-      dialog.addEventListener('keydown', (event) => { if (event.key === 'ArrowLeft') step(-1); if (event.key === 'ArrowRight') step(1); });
-      render(0);
-    })();
-  </script>
+  <script src="/assets/js/archive.js?v=20260814"></script>
 </body>
 </html>

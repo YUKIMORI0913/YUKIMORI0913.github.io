@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Photo Archive 管理</title><link rel="stylesheet" href="/admin/style.css"></head>
+<body><header><div><p>UNAGITANI MANJU</p><h1>Photo Archive 管理</h1></div><span id="count"></span></header>
+<main>
+  <section class="panel"><h2>写真を追加</h2><div id="dropzone" tabindex="0"><strong>写真をここへドロップ</strong><span>またはクリックして選択（JPG / PNG / WebP、最大120枚）</span><input id="files" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden></div><button id="upload" disabled>アップロード</button><div class="progress" hidden><div></div></div><p id="status" role="status"></p></section>
+  <section><div class="list-heading"><h2>Photo 一覧</h2><button id="reload" class="secondary">再読込</button></div><div id="photos" class="photos"></div></section>
+</main><template id="photo-template"><article><img loading="lazy"><div class="fields"><label>タイトル<input name="title"></label><label>説明<textarea name="description" rows="2"></textarea></label><label>代替テキスト<input name="alt_text"></label><div class="row"><label>表示順<input name="sort_order" type="number"></label><label class="check"><input name="is_published" type="checkbox"> 公開</label></div><small></small><div class="actions"><button data-action="save">保存</button><button data-action="delete" class="danger">削除</button></div></div></article></template><script src="/admin/app.js"></script></body></html>
