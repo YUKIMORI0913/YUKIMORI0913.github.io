@@ -7,6 +7,8 @@ import argparse
 import json
 import mimetypes
 import re
+import subprocess
+import sys
 import threading
 import uuid
 from datetime import datetime, timezone
@@ -44,6 +46,7 @@ def write_photos(photos: list[dict]) -> None:
     temporary = DATA_FILE.with_suffix(".tmp")
     temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temporary.replace(DATA_FILE)
+    subprocess.run([sys.executable, str(ROOT / "scripts/generate_sitemap.py")], check=True)
 
 
 def make_thumbnail(source: Path, destination: Path) -> tuple[int, int]:
