@@ -11,7 +11,7 @@
     const open = () => { window.location.href = '/gallery.html'; }; figure.addEventListener('click', open); figure.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); } });
     return figure;
   };
-  fetch('/assets/data/photos.json').then(response => {
+  fetch('/assets/data/photos.json', { cache: 'no-store' }).then(response => {
     if (!response.ok) throw new Error('archive metadata unavailable');
     return response.json();
   }).then(data => {
