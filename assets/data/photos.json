@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-14T08:47:32Z",
+  "updated_at": "2026-08-14T09:03:27Z",
   "photos": [
     {
       "id": "legacy-0001",
@@ -3435,6 +3435,57 @@
       "is_published": true,
       "created_at": "2026-08-14T08:47:32Z",
       "updated_at": "2026-08-14T08:47:32Z"
+    },
+    {
+      "id": "7483a8a9f79f4c299797be7d7c1c70cf",
+      "title": "",
+      "description": "",
+      "alt_text": "",
+      "original_filename": "1-写真1.jpg",
+      "image_url": "/assets/images/photos/originals/7483a8a9f79f4c299797be7d7c1c70cf-1-1.jpg",
+      "thumbnail_url": "/assets/images/photos/thumbnails/7483a8a9f79f4c299797be7d7c1c70cf.webp",
+      "width": 1080,
+      "height": 720,
+      "file_size": 259085,
+      "mime_type": "image/jpeg",
+      "sort_order": 203,
+      "is_published": true,
+      "created_at": "2026-08-14T09:03:26Z",
+      "updated_at": "2026-08-14T09:03:26Z"
+    },
+    {
+      "id": "55d410ad4f1a4ca7933041fbae13f1e7",
+      "title": "",
+      "description": "",
+      "alt_text": "",
+      "original_filename": "2-写真2.jpg",
+      "image_url": "/assets/images/photos/originals/55d410ad4f1a4ca7933041fbae13f1e7-2-2.jpg",
+      "thumbnail_url": "/assets/images/photos/thumbnails/55d410ad4f1a4ca7933041fbae13f1e7.webp",
+      "width": 1080,
+      "height": 1080,
+      "file_size": 393720,
+      "mime_type": "image/jpeg",
+      "sort_order": 204,
+      "is_published": true,
+      "created_at": "2026-08-14T09:03:27Z",
+      "updated_at": "2026-08-14T09:03:27Z"
+    },
+    {
+      "id": "7ea1c3d3b23648c0bbd2394b7d701bdb",
+      "title": "",
+      "description": "",
+      "alt_text": "",
+      "original_filename": "3-写真3.jpg",
+      "image_url": "/assets/images/photos/originals/7ea1c3d3b23648c0bbd2394b7d701bdb-3-3.jpg",
+      "thumbnail_url": "/assets/images/photos/thumbnails/7ea1c3d3b23648c0bbd2394b7d701bdb.webp",
+      "width": 750,
+      "height": 1000,
+      "file_size": 349557,
+      "mime_type": "image/jpeg",
+      "sort_order": 205,
+      "is_published": true,
+      "created_at": "2026-08-14T09:03:27Z",
+      "updated_at": "2026-08-14T09:03:27Z"
     }
   ]
 }
