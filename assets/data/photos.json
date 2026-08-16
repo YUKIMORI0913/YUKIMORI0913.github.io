@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-16T19:27:18Z",
+  "updated_at": "2026-08-16T20:58:03Z",
   "photos": [
     {
       "id": "legacy-0001",
@@ -3500,23 +3500,6 @@
       "file_size": 348677,
       "mime_type": "image/jpeg",
       "sort_order": 206,
-      "is_published": true,
-      "created_at": "2026-08-15T10:36:07Z",
-      "updated_at": "2026-08-15T10:36:07Z"
-    },
-    {
-      "id": "7c72d313eba743ac94ae50aa096bfa42",
-      "title": "",
-      "description": "",
-      "alt_text": "",
-      "original_filename": "2-写真2.jpg",
-      "image_url": "/assets/images/photos/originals/7c72d313eba743ac94ae50aa096bfa42-2-2.jpg",
-      "thumbnail_url": "/assets/images/photos/thumbnails/7c72d313eba743ac94ae50aa096bfa42.webp",
-      "width": 507,
-      "height": 500,
-      "file_size": 104940,
-      "mime_type": "image/jpeg",
-      "sort_order": 207,
       "is_published": true,
       "created_at": "2026-08-15T10:36:07Z",
       "updated_at": "2026-08-15T10:36:07Z"
