@@ -30,6 +30,24 @@
   transform: rotate(45deg);
 }
 
+@media (min-width: 701px) {
+  .hero-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 82px clamp(52px, 8vw, 150px) 72px;
+  }
+
+  .hero h1 {
+    max-width: 620px;
+    font-size: clamp(82px, 8.5vw, 150px);
+  }
+
+  .hero p {
+    max-width: 410px;
+  }
+}
+
 @media (max-width: 700px) {
   .hero {
     min-height: calc(100svh - 62px);
