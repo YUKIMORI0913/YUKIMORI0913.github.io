@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-15T10:36:07Z",
+  "updated_at": "2026-08-16T19:27:18Z",
   "photos": [
     {
       "id": "legacy-0001",
@@ -3520,6 +3520,40 @@
       "is_published": true,
       "created_at": "2026-08-15T10:36:07Z",
       "updated_at": "2026-08-15T10:36:07Z"
+    },
+    {
+      "id": "a8f0540c2a9142d88aa4cc6397b3b316",
+      "title": "KIMONO PORTRAIT",
+      "description": "",
+      "alt_text": "和装でベースを持つ鰻谷饅頭",
+      "original_filename": "kimono-bass-portrait.jpg",
+      "image_url": "/assets/images/photos/originals/a8f0540c2a9142d88aa4cc6397b3b316-kimono-bass-portrait.jpg",
+      "thumbnail_url": "/assets/images/photos/thumbnails/a8f0540c2a9142d88aa4cc6397b3b316.webp",
+      "width": 1024,
+      "height": 1280,
+      "file_size": 199751,
+      "mime_type": "image/jpeg",
+      "sort_order": 209,
+      "is_published": true,
+      "created_at": "2026-08-16T19:26:45Z",
+      "updated_at": "2026-08-16T19:27:18Z"
+    },
+    {
+      "id": "300309acf5f841c8a136db3793f0eb39",
+      "title": "LIVE PERFORMANCE",
+      "description": "",
+      "alt_text": "ライブステージでベースを演奏する鰻谷饅頭",
+      "original_filename": "live-bass-performance.jpg",
+      "image_url": "/assets/images/photos/originals/300309acf5f841c8a136db3793f0eb39-live-bass-performance.jpg",
+      "thumbnail_url": "/assets/images/photos/thumbnails/300309acf5f841c8a136db3793f0eb39.webp",
+      "width": 667,
+      "height": 1000,
+      "file_size": 104283,
+      "mime_type": "image/jpeg",
+      "sort_order": 208,
+      "is_published": true,
+      "created_at": "2026-08-16T19:26:45Z",
+      "updated_at": "2026-08-16T19:27:18Z"
     }
   ]
 }
