@@ -19,6 +19,15 @@ python3 -m venv .venv
 - 公開・非公開の切り替え、削除
 - 元画像の保存と720px以下のWebPサムネイル自動生成
 
+写真の追加・並べ替え・公開状態を変更したら、静的HTMLへの反映も実行します。
+トップページの5枚と Photo Archive の1ページ目は、検索エンジンが最初に取得する
+HTMLに含まれている必要があるためです。
+
+```bash
+python3 scripts/render_photos.py          # HTMLへ反映
+python3 scripts/render_photos.py --check  # 反映漏れの検出
+```
+
 変更後は通常どおり Git でコミット・push してください。追加時に処理されるのは新しい画像だけで、既存画像の再生成やAI解析は行いません。元画像は `assets/images/photos/originals/`、サムネイルは `assets/images/photos/thumbnails/` に保存されます。
 
 公開サイトだけをローカル確認する場合は `python3 -m http.server 8080` を実行し、`http://localhost:8080/` を開きます。
@@ -44,6 +53,6 @@ Search Consoleの所有権確認でHTML verification fileを選んだ場合は�
 4. `https://manju.unagitani.com/` のインデックス登録をリクエスト
 5. `https://manju.unagitani.com/gallery.html` のインデックス登録をリクエスト
 
-旧Wix検索結果の削除方法、確認済み旧URL、SNSリンク統一などの運用手順は [GOOGLE_INDEXING_MANJU.md](GOOGLE_INDEXING_MANJU.md) を参照してください。
+旧Wix検索結果の削除方法、確認済み旧URL、SNSリンク統一などの運用手順は [GOOGLE_INDEXING_MANJU.md](GOOGLE_INDEXING_MANJU.md) を参照してください。2サイト共通のインデックス診断と、Search Consoleのドメインプロパティ設定手順は、コーポレートサイトのリポジトリの `docs/SEARCH_INDEXING.md` にあります。
 
 サイトマップ送信や登録リクエストはインデックスを保証するものではありません。掲載可否と反映時期は検索エンジンが判断します。

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 from pathlib import Path
 from urllib.parse import quote
 from xml.etree import ElementTree as ET
@@ -22,6 +23,22 @@ def absolute_url(path: str) -> str:
     return BASE_URL + quote(path, safe="/%:@-._~")
 
 
+def last_modified(*paths: str) -> str:
+    """指定ファイルの最終コミット日を返します。手書きの日付は古くなるためgitを使います。"""
+    dates = []
+    for path in paths:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%ad", "--date=short", "--", path],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.stdout.strip():
+            dates.append(result.stdout.strip())
+    return max(dates) if dates else ""
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", type=Path, default=ROOT / "assets/data/photos.json")
@@ -32,9 +49,15 @@ def main() -> None:
     urlset = ET.Element(f"{{{SITEMAP_NS}}}urlset")
     home = ET.SubElement(urlset, f"{{{SITEMAP_NS}}}url")
     ET.SubElement(home, f"{{{SITEMAP_NS}}}loc").text = f"{BASE_URL}/"
+    home_modified = last_modified("index.html")
+    if home_modified:
+        ET.SubElement(home, f"{{{SITEMAP_NS}}}lastmod").text = home_modified
 
     archive = ET.SubElement(urlset, f"{{{SITEMAP_NS}}}url")
     ET.SubElement(archive, f"{{{SITEMAP_NS}}}loc").text = f"{BASE_URL}/gallery.html"
+    archive_modified = last_modified("gallery.html", "assets/data/photos.json")
+    if archive_modified:
+        ET.SubElement(archive, f"{{{SITEMAP_NS}}}lastmod").text = archive_modified
     for photo in photos:
         image = ET.SubElement(archive, f"{{{IMAGE_NS}}}image")
         ET.SubElement(image, f"{{{IMAGE_NS}}}loc").text = absolute_url(photo["image_url"])
