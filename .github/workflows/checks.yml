@@ -1,0 +1,29 @@
+name: checks
+
+# 写真グリッドの静的HTMLが photos.json と一致しているかを検証します。
+# ここが落ちる = 検索エンジンが読むHTMLに写真が載っていない状態です。
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  static-output:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python3 scripts/render_photos.py --check
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt pytest
+      - run: python3 -m pytest -q
