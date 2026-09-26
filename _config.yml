@@ -1,0 +1,18 @@
+# GitHub Pages（Jekyll）の公開設定。
+#
+# Jekyll はリポジトリ内のファイルをほぼすべて公開します。管理画面、内部メモ、
+# スクリプト、テストは公開サイトに不要で、検索エンジンに拾われると
+# サイトの品質評価を下げ、内部情報も漏れます。ここで除外します。
+#
+# 公開が必要なもの: index.html, gallery.html, assets/, favicon.svg,
+# robots.txt, sitemap.xml, CNAME（Jekyll が自動で引き継ぎます）
+
+exclude:
+  - admin
+  - docs
+  - scripts
+  - tests
+  - photo_admin.py
+  - requirements.txt
+  - README.md
+  - GOOGLE_INDEXING_MANJU.md
