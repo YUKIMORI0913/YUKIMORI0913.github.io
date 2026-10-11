@@ -1,0 +1,70 @@
+/* 2026-10-12 トップ画像をアーティスト写真に変更。
+   元の京都の絵に戻すときは index.html の hero-photo.css の行を消すだけ(タグ hero-kyoto-before-20261012 が変更前)。 */
+.hero {
+  background: #1d1a16 !important;
+}
+
+.hero::before {
+  display: none;
+}
+
+/* 写真は ::after に置き、左右の端を背景色へぼかす */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 3%;
+  bottom: 0;
+  left: auto;
+  width: min(64%, calc((100svh - 74px) * .8));
+  background: url(/assets/images/profile-artist-2026.jpg) center top / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 24%, #000 84%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 24%, #000 84%, transparent 100%);
+  writing-mode: horizontal-tb;
+}
+
+@media (min-width: 701px) {
+  .hero-content {
+    align-items: flex-start;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 56px 34px;
+    text-align: left;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 26px;
+  }
+
+  .hero h1 {
+    max-width: 560px;
+  }
+
+  .hero p {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    align-items: flex-end !important;
+  }
+
+  .hero::after {
+    right: 0;
+    left: 0;
+    bottom: auto;
+    width: auto;
+    height: 64%;
+    background-position: 40% 12%;
+    background-size: 150% auto;
+    -webkit-mask-image: linear-gradient(180deg, #000 0, #000 62%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0, #000 62%, transparent 100%);
+  }
+
+  .hero-content {
+    justify-content: flex-end;
+    margin: auto 0 0;
+    padding: 0 20px 34px;
+  }
+}
