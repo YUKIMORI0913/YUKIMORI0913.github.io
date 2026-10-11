@@ -70,3 +70,9 @@
     margin-top: 28px;
   }
 }
+
+/* 2026-10-12 プロフィール写真を横長の演奏写真に変更 */
+.profile-portrait img.profile-portrait--landscape {
+  aspect-ratio: 4 / 3;
+  object-position: 40% center;
+}
